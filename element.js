@@ -1,6 +1,6 @@
 customElements.define('gh-corner', class extends HTMLElement {
     connectedCallback() {
-        let component = location.hostname;
+        let component = location.hostname.split(".")[0];
         let repo = `https://github.com/${component}/${component}.github.io`
         let href = this.getAttribute('href') || repo;
         this.attachShadow({ mode: 'open' }).innerHTML =
